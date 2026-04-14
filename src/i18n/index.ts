@@ -17,8 +17,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
+    lng: 'en',
     fallbackLng: 'en',
-    defaultLng: 'en',
     debug: false,
     interpolation: {
       escapeValue: false,
@@ -27,6 +27,6 @@ i18n
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
     },
-  });
+  } as const);
 
 export default i18n;

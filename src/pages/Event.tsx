@@ -7,6 +7,7 @@ import type { Service, Event } from "../types/api";
 import Skeleton from "../components/Skeleton";
 
 const EventCard: React.FC<{ event: any; index: number; onRegister: (e: any) => void }> = ({ event, index, onRegister }) => {
+  const { t } = useTranslation();
   const date = event.startTime || event.date;
   return (
     <div 
@@ -47,6 +48,7 @@ const EventCard: React.FC<{ event: any; index: number; onRegister: (e: any) => v
 };
 
 const RegisterModal: React.FC<{ isOpen: boolean; onClose: () => void; event: any }> = ({ isOpen, onClose, event }) => {
+  const { t } = useTranslation();
   if (!isOpen || !event) return null;
 
   return (
